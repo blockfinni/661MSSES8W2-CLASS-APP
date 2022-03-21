@@ -18,6 +18,73 @@
 <a href="http://google.com">Click Here</a>
 </body>
 <script>
+    let paragraph = document.body.children[0];
+    let paragraph = document.body.children[1];
+    let link = document.body.children[2];
+    console.log(header);
+    console.log(paragraph);
+    console.log(link);
+
+    link.href = 'http://google.com';
+
+    String('Hello World!');
+    let string = 'Hello World!';
+
+    Number('10');
+    let number = 10;
+
+
+    Array(1, 2, 3, 4, 5);
+    let array = [1, 2, 3, 4, 5];
+
+    for (var index = 0; index < array.length; index++) {
+        const element = array[index];
+    }
+
+    for (var index in array) {
+        const element = array[index];
+        //console.log(element)
+    }
+
+    var index = 0;
+    while (index < array.length) {
+        const element = array[index];
+        // console.log(element);
+        index++;
+    }
+
+    let strings = ['hello', 'world!'];
+    let newStatement = strings.join(' ');
+    let newStatement2 = strings.concat(['Bob']);
+    //console.log(newStatement);
+    //console.log(newStatement2);
+
+    const object = {
+        things: 'Bag of Stuff',
+        stuff: ['Bag One', 'Bag Two']
+    };
+
+    function sum(a, b){
+        return a + b;
+    }
+
+    //console.log(sum(3,5));
+
+    let Person = {
+        name: "Bob",
+        aga: 50,
+        likes: ["ice-cream", "salsa dancing"],
+        doMath: function (){
+            return 'Bob likes Math!'
+        }
+    };
+
+    console.log(person.age);
+    console.log(person.doMath);
+    console.log(person.doMath());
+
+    let doMath = person.doMath;
+    console.log(doMath());
 
 </script>
 </html>
