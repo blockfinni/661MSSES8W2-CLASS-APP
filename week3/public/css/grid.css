@@ -1,0 +1,27 @@
+body {
+    margin: 40px;
+}
+
+.header {
+    grid-area: header;
+    vertical-align: middle;
+    text-align: center;
+    background-color: grey;
+}
+
+.nav{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.li{
+   /* vertical-align: middle; */
+}
+
+
+.footer{
+    grid-area: footer;
+    vertical-align: middle;
+    text-align: center;
+    background-color: grey;
+}

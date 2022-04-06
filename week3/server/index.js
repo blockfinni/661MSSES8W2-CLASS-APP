@@ -1,6 +1,11 @@
-const http =  require("http");
-const server = http.createServer(3000, function(req,res){
+const express =  require('express');
+const app = express();
 
-})
+app.use(express.static('public'));
+app.use('/css', express.static(__dirname + '/public/css'));
+app.use('/js', express.static(__dirname + '/public/src'));
 
-server.listen(3000)
+app.listen(3000, function (){
+    console.log('Server started at http://localhost:%s', 3000);
+});
+
