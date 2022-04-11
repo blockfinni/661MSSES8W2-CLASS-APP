@@ -55,7 +55,7 @@ app.post('/login', async (req, res) => {
     const foundUser = await User.findAndValidate(username, password);
     if (foundUser) {
         req.session.user_id = foundUser._id;
-        res.redirect('/loginSuccess');
+        res.redirect('/public/about.html');
     }
     else {
         res.redirect('/login')
