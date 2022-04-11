@@ -7,7 +7,7 @@ const session = require('express-session');
 
 
 
-mongoose.connect('mongodb://localhost:27017/loginDemo', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/UsernamePassowrds', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
     })
@@ -30,7 +30,7 @@ const requireLogin = (req, res, next) => {
     next();
 }
 app.get('/', (req, res) => {
-    res.send('THIS IS THE HOME PAGE')
+    res.send('Registered')
 })
 
 app.get('/register', (req, res) => {
@@ -53,7 +53,7 @@ app.post('/login', async (req, res) => {
     const foundUser = await User.findAndValidate(username, password);
     if (foundUser) {
         req.session.user_id = foundUser._id;
-        res.redirect('/secret');
+        res.redirect('/loginSuccess');
     }
     else {
         res.redirect('/login')
@@ -66,12 +66,10 @@ app.post('/logout', (req, res) => {
     res.redirect('/login');
 })
 
-app.get('/secret', requireLogin, (req, res) => {
-    res.render('secret')
+app.get('/loginSuccess', requireLogin, (req, res) => {
+    res.render('loginSuccess')
 })
-app.get('/topsecret', requireLogin, (req, res) => {
-    res.send("TOP SECRET!!!")
-})
+
 
 app.listen(3000, () => {
     console.log("NOW SERVING")
