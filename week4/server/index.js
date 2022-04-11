@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const User = require('./models/user');
+const User = require('../models/user');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const session = require('express-session');
 
 
@@ -74,5 +74,5 @@ app.get('/topsecret', requireLogin, (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log("SERVING YOUR APP!")
+    console.log("NOW SERVING")
 })
