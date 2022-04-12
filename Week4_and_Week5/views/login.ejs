@@ -4,22 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <link rel="stylesheet" href="./css/flexbox.css"/>
+    <link rel="stylesheet" href="./css/grid.css"/>
+    <title>Login</title>
 </head>
 
 <body>
-<h1>SIGN UP!</h1>
-<form action="/register" method="POST">
+<div class="loginPage">
+<h1>Login</h1>
+<form action="/login" method="POST">
     <div>
-        <label for="username">Enter Username:</label>
+        <label for="username">Username:</label>
         <input type="text" name="username" id="username" placeholder="username">
     </div>
     <div>
-        <label for="password">Enter password:</label>
+        <label for="password">Password:  </label>
         <input type="password" name="password" id="password" placeholder="password">
     </div>
-    <button>Sign Up</button>
+    <button>Login</button>
 </form>
+</div>
 </body>
 
 </html>

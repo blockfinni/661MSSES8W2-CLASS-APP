@@ -1,0 +1,31 @@
+
+
+.header {
+    grid-area: header;
+    vertical-align: middle;
+    text-align: center;
+    background-color: grey;
+}
+
+.nav{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.li{
+   /* vertical-align: middle; */
+}
+
+
+.footer{
+    grid-area: footer;
+    vertical-align: middle;
+    text-align: center;
+    background-color: grey;
+}
+
+.loginPage{
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+}

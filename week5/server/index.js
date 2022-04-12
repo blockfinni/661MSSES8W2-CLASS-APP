@@ -25,7 +25,7 @@ app.use(session({ secret: 'passwordnotstrong' }))
 
 const requireLogin = (req, res, next) => {
     if (!req.session.user_id) {
-        return res.redirect('/login')
+        return res.redirect('/public/index')
     }
     next();
 }
@@ -55,7 +55,7 @@ app.post('/login', async (req, res) => {
     const foundUser = await User.findAndValidate(username, password);
     if (foundUser) {
         req.session.user_id = foundUser._id;
-        res.redirect('/public/about.html');
+        res.redirect('/public/about.ejs');
     }
     else {
         res.redirect('/login')

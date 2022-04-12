@@ -19,7 +19,9 @@ mongoose.connect('mongodb://localhost:27017/UsernamePassowrds', { useNewUrlParse
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-
+app.use(express.static('public'));
+app.use('/css', express.static(__dirname + '/public/css'));
+app.use('/js', express.static(__dirname + '/public/src'));
 app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: 'passwordnotstrong' }))
 
@@ -55,7 +57,7 @@ app.post('/login', async (req, res) => {
     const foundUser = await User.findAndValidate(username, password);
     if (foundUser) {
         req.session.user_id = foundUser._id;
-        res.redirect('/loginSuccess');
+        res.redirect('/landing');
     }
     else {
         res.redirect('/login')
@@ -72,7 +74,11 @@ app.get('/loginSuccess', requireLogin, (req, res) => {
     res.render('loginSuccess')
 })
 
+app.get('/landing', requireLogin, (req, res) => {
+    res.render('landing')
+})
 
 app.listen(3000, () => {
     console.log("NOW SERVING")
 })
+
